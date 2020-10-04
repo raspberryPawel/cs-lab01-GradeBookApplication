@@ -160,6 +160,7 @@ namespace GradeBookTests
             }
         }
 
+
         /// <summary>
         ///   All tests related to the "Second 20 Percent Get A B" task.
         /// </summary>
