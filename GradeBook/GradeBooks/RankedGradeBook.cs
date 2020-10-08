@@ -49,38 +49,28 @@ namespace GradeBook.GradeBooks
             else
                 return 'F';
         }
+
+        public override void CalculateStatistics()
+        {
+            if (Students.Count < 5)
+            {
+                Console.Write("Ranked grading requires at least 5 students.");
+            }
+            else {
+                base.CalculateStatistics();
+            }
+        }
+
+        public override void CalculateStudentStatistics(string name)
+        {
+            if (Students.Count < 5)
+            {
+                Console.Write("Ranked grading requires at least 5 students.");
+            }
+            else
+            {
+                base.CalculateStudentStatistics(name);
+            }
+        }
     }
 }
-
-/*
- * 
-  if (Students.Count > 0)
-            {
-                throw new InvalidOperationException();
-            }
-            int countGrades = 0;
-            Students.ForEach(delegate (Student student) {
-                student.Grades.ForEach(delegate (double grade)
-                {
-                    if (grade > 0)
-                    {
-                        countGrades++;
-                    }
-                });
-            });
-           
-
-            double twentyPercentOfStudents = 0.2 * Students.Count;
-            int countNotes = 0;
-
-            Students.ForEach(delegate(Student student){
-                Console.WriteLine(student);
-                student.Grades.ForEach(delegate (double grade)
-                {
-                    if (averageGrade > grade) {
-                        countNotes++;
-                    }
-                });
-            });
-
-*/
